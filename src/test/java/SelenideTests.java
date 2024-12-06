@@ -19,7 +19,6 @@ public class SelenideTests {
         WebDriverManager.chromedriver().setup();
         Configuration.timeout = 20;
         Configuration.browser = "chrome";
-        Configuration.holdBrowserOpen=true;
         sfa = new SoftAssert();
     }
 
