@@ -17,7 +17,7 @@ public class SelenideTests {
     @BeforeClass
     public void setUp(){
         WebDriverManager.chromedriver().setup();
-        Configuration.timeout = 20;
+        Configuration.timeout = 10;
         Configuration.browser = "chrome";
         sfa = new SoftAssert();
     }
