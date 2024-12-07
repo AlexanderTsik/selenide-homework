@@ -11,16 +11,8 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 import static ge.tbcitacademy.data.Constants.*;
 
-public class SelenideTests {
+public class SelenideTests extends BaseTest{
 
-    SoftAssert sfa;
-    @BeforeClass
-    public void setUp(){
-        WebDriverManager.chromedriver().setup();
-        Configuration.timeout = 10;
-        Configuration.browser = "chrome";
-        sfa = new SoftAssert();
-    }
 
     //1) validateBundleOffers:
     // - Navigate to https://www.telerik.com/support/demos

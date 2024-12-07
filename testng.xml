@@ -1,26 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Selenide Homework Suite" parallel="tests" thread-count="2">
-    <parameter name="browser" value="chrome"/>
     <test name="Chrome Tests">
-        <parameter name="browser" value="chrome"/>
+        <parameter name="browserType" value="chrome" />
         <classes>
-            <class name="SelenideTests">
-                <methods>
-                    <exclude name="collectionsTest"/>
-                </methods>
-            </class>
+            <class name="SelenideTests" />
+            <class name="SelenideTests2" />
         </classes>
     </test>
     <test name="FirefoxOnlyTest">
-        <parameter name="browser" value="firefox"/>
+        <parameter name="browserType" value="firefox" />
         <groups>
             <run>
-                <include name="firefox-only"/>
+                <include name="firefox-only" />
             </run>
         </groups>
         <classes>
-            <class name="SelenideTests"/>
+            <class name="SelenideTests" />
         </classes>
     </test>
 </suite>
