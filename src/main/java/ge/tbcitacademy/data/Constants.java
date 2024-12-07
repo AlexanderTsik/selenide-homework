@@ -12,4 +12,5 @@ public class Constants {
     public static final String QUANTITY_NUM = "2";
 
     public static final String EXPECTED_COLOR = "rgba(40, 46, 137, 0.75)";
+    public static final String HOTFIX_CONSTANT = "Assertions Branch Constant";
 }
