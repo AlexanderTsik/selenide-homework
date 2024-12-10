@@ -13,5 +13,5 @@ public class Constants {
 
     public static final String EXPECTED_COLOR = "rgba(40, 46, 137, 0.75)";
 
-    public static final String CONFLICTING_STRING = "making a conflict";
+    public static final String OG_STRING = "Random string";
 }
