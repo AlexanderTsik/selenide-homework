@@ -8,7 +8,7 @@ public class ScreenshotUtil {
     public static void captureScreenshot(String testName) {
         try {
             File screenshot = Screenshots.takeScreenShotAsFile();
-            FileUtils.copyFile(screenshot, new File("screenshotss/" + testName + ".png"));
+            FileUtils.copyFile(screenshot, new File("screenshots/" + testName + ".png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
