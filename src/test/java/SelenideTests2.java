@@ -410,7 +410,7 @@ public class SelenideTests2 extends BaseTest {
         // Assert all at the end
         softAssert.assertAll();
 
-        System.out.println("completed test");
+        System.out.print("finished");
     }
 
 

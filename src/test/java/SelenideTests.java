@@ -291,7 +291,7 @@ public class SelenideTests extends BaseTest{
         $("#output #currentAddress").shouldHave(Condition.text("Current Address :Current address line 1"));
         $("#output #permanentAddress").shouldHave(Condition.text("Permananet Address :Permanent Address line 1"));
 
-        System.out.println("completed test");
+        System.out.print("finished");
     }
 
 }
