@@ -1,6 +1,8 @@
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
+import ge.tbcitacademy.retry.RetryAnalyzer;
+import ge.tbcitacademy.retry.RetryCount;
 import org.openqa.selenium.Keys;
 import org.testng.Assert;
 import org.testng.annotations.Test;
@@ -195,7 +197,8 @@ public class SelenideTests2 extends BaseTest {
     //  - Continue as guest and fill the form with data of your choice.
     //  - Go back and forward, then check if the info you inserted in the form is still there.
 
-    @Test
+    @RetryCount(count = 3)
+    @Test(retryAnalyzer = RetryAnalyzer.class)
     public void validateOrderMechanics(){
         open(DEMOS_URL);
         $("a[href='/purchase.aspx']").click();//go to pricing page
@@ -406,5 +409,17 @@ public class SelenideTests2 extends BaseTest {
 
         // Assert all at the end
         softAssert.assertAll();
+
+        System.out.println("completed test");
     }
+
+
+    //purely for the sake of retrying
+    @RetryCount(count = 5) // Retry this test up to 5 times
+    @Test(retryAnalyzer = RetryAnalyzer.class)
+    public void testWithRetries() {
+        System.out.println("Running testWithRetries");
+        Assert.fail("Failing on purpose to test retry mechanism");
+    }
+
 }

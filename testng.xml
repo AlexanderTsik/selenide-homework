@@ -1,22 +1,43 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Selenide Homework Suite" parallel="tests" thread-count="2">
-    <test name="Chrome Tests">
-        <parameter name="browserType" value="chrome" />
+<suite name="Selenide Test Suite">
+    <test name="Selenide Homework Tests">
+        <groups>
+            <define name="Selenide 1">
+                <include name="validateBundleOffers"/>
+                <include name="validateBundleOffers2"/>
+                <include name="validateBundleOffers3"/>
+                <include name="validateIndividualOffers"/>
+            </define>
+            <define name="Selenide 2">
+                <include name="validateDemosDesign"/>
+                <include name="validateOrderMechanics"/>
+                <include name="chainedLocatorsTest"/>
+                <include name="softAssertTest"/>
+            </define>
+            <define name="Parent Group">
+                <include name="Selenide 1"/>
+                <include name="Selenide 2"/>
+            </define>
+        </groups>
         <classes>
-            <class name="SelenideTests" />
-            <class name="SelenideTests2" />
+            <class name="SelenideTests"/>
+            <class name="SelenideTests2"/>
         </classes>
     </test>
-    <test name="FirefoxOnlyTest">
-        <parameter name="browserType" value="firefox" />
+
+    <test name="Frontend Tests">
         <groups>
+            <define name="CheckBoxes-FrontEnd">
+                <include name="checkBoxTest"/>
+            </define>
+            <define name="dropDown-FrontEnd">
+                <include name="dropDownTest"/>
+            </define>
             <run>
-                <include name="firefox-only" />
+                <include name=".*FrontEnd"/>
             </run>
         </groups>
         <classes>
-            <class name="SelenideTests" />
+            <class name="SelenideTests"/>
         </classes>
     </test>
 </suite>
