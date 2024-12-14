@@ -245,7 +245,7 @@ public class SelenideTests extends BaseTest{
     // - Set first checkbox selected
     // - Validate that both checkboxes have type 'checkbox'.
 
-    @Test
+    @Test(groups = {"checkBoxes-FrontEnd"}, priority = 1)
     public void checkBoxTest() {
         open(CHECKBOXES_URL);
         $$("#checkboxes input").get(0).setSelected(true);
@@ -258,7 +258,7 @@ public class SelenideTests extends BaseTest{
     // - Select 'Option 2'
     // - Validate that 'Option 2' was selected
 
-    @Test
+    @Test(groups = {"dropDown-FrontEnd"}, priority = 2)
     public void dropDownTest() {
         open(DROPDOWN_URL);
         $("#dropdown").shouldHave(text("Please select an option"));
@@ -290,6 +290,9 @@ public class SelenideTests extends BaseTest{
         $("#output #email").shouldHave(Condition.text("Email:johndoe@example.com"));
         $("#output #currentAddress").shouldHave(Condition.text("Current Address :Current address line 1"));
         $("#output #permanentAddress").shouldHave(Condition.text("Permananet Address :Permanent Address line 1"));
+
+        System.out.print("finished from branch 1");
+
     }
 
 }
